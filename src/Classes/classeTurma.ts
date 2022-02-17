@@ -2,7 +2,7 @@ import { interfaceDocente, interfaceEstudante} from "../Interfaces/interfaces";
 
 export class Turma {
     protected id: string;
-    protected name: string;
+    protected nome: string;
     protected docentes: interfaceDocente[];
     protected estudantes: interfaceEstudante[];
     protected modulo: number;
@@ -15,7 +15,7 @@ export class Turma {
         modulo: number,
     ) {
         this.id = id;
-        this.name = name;
+        this.nome = name;
         this.docentes = docentes;
         this.estudantes = estudantes;
         this.modulo = modulo;
@@ -26,7 +26,7 @@ export class Turma {
     }
 
     public getName(): string{
-        return this.name
+        return this.nome
     }
 
     public getDocentes(): interfaceDocente[]{
