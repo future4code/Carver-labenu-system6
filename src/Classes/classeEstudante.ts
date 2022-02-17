@@ -1,7 +1,8 @@
+import {  interfaceHobbies } from "../Interfaces/interfaces";
 import { Usuario } from "./classeUsuario";
 
 export class Estudante extends Usuario{
-    protected hobbies: string;
+    protected hobbies :interfaceHobbies [];
     
     constructor(
         id: string,
@@ -9,7 +10,7 @@ export class Estudante extends Usuario{
         email: string,
         data_nasc: string,
         turma_id: string,
-        hobbies: string,
+        hobbies: interfaceHobbies [],
     ) {
         super(id,
             name,
@@ -19,7 +20,7 @@ export class Estudante extends Usuario{
         this.hobbies = hobbies;
     }
 
-    public getHobbies(): string{
+    public getHobbies():interfaceHobbies [] {
         return this.hobbies
     }
 }
