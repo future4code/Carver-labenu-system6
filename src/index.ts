@@ -4,8 +4,13 @@ import cors from 'cors'
 import { createTurma } from "./EndPoints/Turma/createTurma";
 import { createEstudante } from "./EndPoints/Estudante/createEstudante";
 import { createDocente } from "./EndPoints/Docente/createDocente";
+
+import { buscarEstudante } from "./EndPoints/Estudante/buscarEstudante";
+import { mudarTurma } from "./EndPoints/Estudante/mudarTurma";
+
 import { buscarTurma } from "./EndPoints/Turma/buscarTurma";
 import { mudarModulo } from "./EndPoints/Turma/mudarModulo";
+
 
 const app: Express = express();
 
@@ -23,9 +28,18 @@ const server = app.listen(process.env.PORT || 3003, () => {
 app.post("/create/turma", createTurma)
 app.post("/create/estudante", createEstudante)
 app.post("/create/docente", createDocente)
+
+
+
+app.get("/buscar/estudante/:nome", buscarEstudante)
+app.put("/mudar/estudante/:id", mudarTurma)
+
+
+
 app.get("/turma", buscarTurma)
 
 
 
 
 app.put("/turma/:id/modulo", mudarModulo)
+
