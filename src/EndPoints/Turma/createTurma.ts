@@ -14,7 +14,7 @@ export const createTurma = async (req: Request, res: Response):Promise<void> => 
 
         if(!nome){
             errorCode = 422
-            throw new Error
+            throw new Error("Insira o nome da turma")
         }
 
         const novaTurma = new Turma(id, nome, estudantes, docentes, modulo)
@@ -30,6 +30,6 @@ export const createTurma = async (req: Request, res: Response):Promise<void> => 
 
         res.status(201).send({message: "Turma criada com sucesso!"})
     } catch (error:any) {
-        res.send({error, message:error.message})
+        res.send({error: error.message})
     }
 }
