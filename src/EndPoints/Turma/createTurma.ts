@@ -6,7 +6,7 @@ import { interfaceDocente, interfaceEstudante, interfaceTurma } from "../../Inte
 export const createTurma = async (req: Request, res: Response):Promise<void> => {
     let errorCode = 500
     try {
-        const nome = req.body
+        const {nome} = req.body
         const id = Date.now().toString()
         const estudantes: interfaceEstudante[] = []
         const docentes: interfaceDocente[] = []
