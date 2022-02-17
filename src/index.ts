@@ -29,17 +29,9 @@ app.post("/create/turma", createTurma)
 app.post("/create/estudante", createEstudante)
 app.post("/create/docente", createDocente)
 
-
-
-app.get("/buscar/:nome/estudante", buscarEstudante)
-app.put("/mudar/:id/estudante", mudarTurma)
-
-
-
 app.get("/turma", buscarTurma)
+app.get("/buscar/:nome/estudante", buscarEstudante)
 
-
-
-
+app.put("/mudar/:id/estudante", mudarTurma)
 app.put("/turma/:id/modulo", mudarModulo)
 
