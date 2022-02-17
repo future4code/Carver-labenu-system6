@@ -31,8 +31,8 @@ app.post("/create/docente", createDocente)
 
 
 
-app.get("/buscar/estudante/:nome", buscarEstudante)
-app.put("/mudar/estudante/:id", mudarTurma)
+app.get("/buscar/:nome/estudante", buscarEstudante)
+app.put("/mudar/:id/estudante", mudarTurma)
 
 
 
