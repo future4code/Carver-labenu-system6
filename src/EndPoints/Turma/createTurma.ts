@@ -12,6 +12,11 @@ export const createTurma = async (req: Request, res: Response):Promise<void> => 
         const docentes: interfaceDocente[] = []
         const modulo = 0
 
+        if(!nome){
+            errorCode = 422
+            throw new Error
+        }
+
         const novaTurma = new Turma(id, nome, estudantes, docentes, modulo)
 
         const turma: interfaceTurma = {
