@@ -12,19 +12,6 @@ export const createTurma = async (req: Request, res: Response):Promise<void> => 
         const docentes: interfaceDocente[] = []
         const modulo = 0
 
-        const nomeIgual = await connection("turma_6")
-        .where(nome)
-
-        if(nomeIgual === nome){
-            errorCode = 422
-            throw new Error("Turma já criada!")
-        }
-
-        if(!nome){
-            errorCode = 422
-            throw new Error("Insira um nome para criar a turma!")
-        }
-
         const novaTurma = new Turma(id, nome, estudantes, docentes, modulo)
 
         const turma: interfaceTurma = {
