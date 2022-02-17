@@ -24,3 +24,8 @@ export interface interfaceTurma {
     nome: string,
     modulo: Number,
 }
+
+export interface interfaceEspecialidade {
+    id: string,
+    nome: string,   
+}
