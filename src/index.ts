@@ -11,6 +11,7 @@ import { mudarTurma } from "./EndPoints/Estudante/mudarTurma";
 import { buscarTurma } from "./EndPoints/Turma/buscarTurma";
 import { mudarModulo } from "./EndPoints/Turma/mudarModulo";
 import { buscarDocente } from "./EndPoints/Docente/buscarDocentes";
+import { mudarDocenteTurma } from "./EndPoints/Docente/mudarDocenteTurma";
 
 
 const app: Express = express();
@@ -35,4 +36,4 @@ app.get("/buscar/:nome/estudante", buscarEstudante)
 app.get("/docente", buscarDocente)
 app.put("/mudar/:id/estudante", mudarTurma)
 app.put("/turma/:id/modulo", mudarModulo)
-
+app.put("/docente/:id/turma", mudarDocenteTurma)
