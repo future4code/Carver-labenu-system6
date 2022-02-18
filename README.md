@@ -30,4 +30,121 @@ As funcionalidades básicas são:
 
 → Adicionar docente na turma;
 
-→ Pegar a idade de algum estudante a partir do id
+## Integrantes
+
+- Alisson Abílio
+- Igor Eiiji Avelar Matsuoka
+- Thamires Lippelt Vieira
+
+## Tecnologias utilizadas
+
+ - NodetJS
+ - Typescript
+ - Express
+ - Knex
+ - MySQL
+ - JSON 
+
+## Funcionalidades básicas:
+
+BASE URL: 
+
+→ Criar estudante
+
+Método POST
+
+Para inserir o aluno, deve-se passar o body onde todos os items são obrigatórios. De acordo com o enunciado. Caso o hobby já exista no banco, ele não será adicionado de novo, serão adicionados apenas os hobbies novos.
+
+Body:
+
+{
+    "nome": "",
+    "email": "",
+    "data_nasc": "",
+    "turma": "",
+    "hobbies": []
+}
+
+__________________________________________________________________________
+
+→ Criar docente
+
+Método POST
+
+Para inserir o professor, deve-se passar o body onde todos os items são obrigatórios. 
+
+
+Body:
+
+{
+    "nome": "",
+    "email": "",
+    "data_nasc": "",
+    "turma": "",
+    "especialidades": []
+}
+_______________________________________________________________________________
+
+→ Criar turma
+
+Método POST
+
+Para inserir uma turma, deve-se passar o body onde todos os items são obrigatórios. 
+
+Body:
+
+{
+    "name": "",
+    "modulo": 0
+}
+
+____________________________________________________________________________
+
+→ Mudar estudante de turma
+
+Méotodo PUT
+Para trocar o aluno de turma, é necessário informar o email do aluno com a turma desejada.
+
+Body:
+
+{
+    "email": "",
+    "turma": ""
+}
+
+_______________________________________________________________________________
+
+→ Mudar docente de turma
+
+Método PUT
+Para trocar o docente de turma, é necessário informar o email do docente com a turma desejada.
+
+Body:
+
+{
+    "email": "",
+    "turma": ""
+}
+
+_________________________________________________________________________________
+ 
+→ Buscar estudantes através do nome
+
+Método GET
+
+
+_______________________________________________________________________________
+
+→ Pegar todas as turmas
+
+Método GET
+
+
+_______________________________________________________________________________
+ 
+→ Buscar todas as pessoas docentes
+
+Método GET
+
+
+
