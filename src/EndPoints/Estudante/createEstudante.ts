@@ -6,10 +6,11 @@ import { interfaceEstudante, interfaceHobbies} from "../../Interfaces/interfaces
 export const createEstudante = async (req: Request, res: Response):Promise<void> => {
     let errorCode = 500
     try {
+    
         const {nome, email, data_nasc, turma_id } = req.body
         const id = Date.now().toString()
         const hobbies: interfaceHobbies[] = req.body.hobbies
-        
+
         const novoEstudante = new Estudante (id, nome, email, data_nasc, turma_id, hobbies)
 
         const estudante: interfaceEstudante = {
