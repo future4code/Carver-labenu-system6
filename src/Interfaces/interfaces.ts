@@ -13,6 +13,7 @@ export interface interfaceDocente {
     data_nasc: string,
     turma_id: string
 }
+
 export interface interfaceHobbies {
     id: string,
     nome: string,
