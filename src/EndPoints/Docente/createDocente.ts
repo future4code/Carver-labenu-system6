@@ -38,7 +38,6 @@ export const createDocente = async (req: Request, res: Response): Promise<void> 
             //     errorCode = 422
             //     throw new Error("Insira uma especialidade pré-definida")
             // }
-
             const novaEspecialidade = {
                 id: especialidadeId,  
                 nome: especialidade
@@ -55,7 +54,6 @@ export const createDocente = async (req: Request, res: Response): Promise<void> 
         }
 
         res.status(201).send({message: "Docente cadastrado com sucesso"})
-
     } 
     catch(error : any){
         res.status(500).send(error.sqlmessage|| error.message)
