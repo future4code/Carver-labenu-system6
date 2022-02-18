@@ -6,15 +6,26 @@ import {  interfaceDocente, interfaceEstudante, interfaceHobbies, interfaceTurma
 export const createEstudante = async (req: Request, res: Response):Promise<void> => {
     let errorCode = 500
     try {
-        const {nome, email, data_nasc, turma_id, } = req.body
+        const {nome, email, data_nasc, turma_id } = req.body
         const id = Date.now().toString()
-        
         const hobbies: interfaceHobbies[] = req.body.hobbies
-        const hobby = {
-            id: Date.now().toString(),
-            nome: hobbies
+
+        for (let hob of hobbies){
+            let hobby_id
+            const hobby = {
+                id: Date.now().toString(),
+                nome: hob
+            }
+            await connection("hobby_6").insert(hobby)
+
+            const estudanteHobbie = {
+                id: Date.now().toString(),
+                estudante_id: id,
+                hobby_id: hobby_id
+            }
+
+            await connection("estudante_hobby_6").insert(estudanteHobbie)
         }
-         await connection("hobby_6").insert(hobby)
 
         const novoEstudante = new Estudante (id, nome, email, data_nasc, turma_id, hobbies)
 
