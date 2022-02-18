@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { Docente } from "../../Classes/classeDocente";
 import { connection } from "../../Data/connection";
-import { interfaceDocente, interfaceEspecialidade, interfaceHobbies, interfaceTurma } from "../../Interfaces/interfaces";
+import { interfaceDocente, interfaceEspecialidade } from "../../Interfaces/interfaces";
 
 export const createDocente = async (req: Request, res: Response): Promise<void> => {
     let errorCode = 500

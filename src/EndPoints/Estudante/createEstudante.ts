@@ -24,7 +24,7 @@ export const createEstudante = async (req: Request, res: Response):Promise<void>
                 hobby_id: hobby_id
             }
 
-            await connection("ESTUDANTE_HOBBY").insert(estudanteHobbie)
+            await connection("estudante_hobby_6").insert(estudanteHobbie)
         }
 
         const novoEstudante = new Estudante (id, nome, email, data_nasc, turma_id, hobbies)

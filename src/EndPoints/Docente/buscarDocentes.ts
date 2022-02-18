@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { connection } from "../../Data/connection";
 
+//verificar resposta do postman{}
 export const buscarDocente = async (req: Request, res: Response) => {
 
     try {
