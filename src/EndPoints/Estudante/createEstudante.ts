@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { Estudante } from "../../Classes/classeEstudante";
 import { connection } from "../../Data/connection"; 
-import {  interfaceDocente, interfaceEstudante, interfaceHobbies, interfaceTurma } from "../../Interfaces/interfaces";
+import { interfaceEstudante, interfaceHobbies} from "../../Interfaces/interfaces";
 
 export const createEstudante = async (req: Request, res: Response):Promise<void> => {
     let errorCode = 500
@@ -10,22 +10,31 @@ export const createEstudante = async (req: Request, res: Response):Promise<void>
         const id = Date.now().toString()
         const hobbies: interfaceHobbies[] = req.body.hobbies
 
-        for (let hob of hobbies){
-            let hobby_id
-            const hobby = {
-                id: Date.now().toString(),
-                nome: hob
+        for (let hobbie of hobbies) {
+            let hobbieId
+            const [alreadyHobby] = await connection("hobby_6")
+                .where({ nome: hobbie })
+
+            if (alreadyHobby) {
+                hobbieId = alreadyHobby.id
+            } else {
+                hobbieId = Date.now().toString()
+                const novoHobbie = {
+                    id: hobbieId,
+                    nome: hobbie
+                }
+                await connection("hobby_6").insert(novoHobbie)
             }
-            await connection("hobby_6").insert(hobby)
 
             const estudanteHobbie = {
                 id: Date.now().toString(),
                 estudante_id: id,
-                hobby_id: hobby_id
+                hobbie_id: hobbieId
             }
 
             await connection("estudante_hobby_6").insert(estudanteHobbie)
         }
+
 
         const novoEstudante = new Estudante (id, nome, email, data_nasc, turma_id, hobbies)
 
