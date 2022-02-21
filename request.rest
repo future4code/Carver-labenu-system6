@@ -1,0 +1,34 @@
+GET http://localhost:3003/turma
+Content-Type: application/json
+
+###
+GET http://localhost:3003/buscar/:nome/estudante
+Content-Type: application/json
+
+###
+GET http://localhost:3003/docente
+Content-Type: application/json
+
+###
+POST http://localhost:3003/create/turma
+Content-Type: application/json
+
+###
+POST http://localhost:3003/create/estudante
+Content-Type: application/json
+
+###
+POST http://localhost:3003/create/docente
+Content-Type: application/json
+
+###
+PUT http://localhost:3003/turma/:id/modulo
+Content-Type: application/json
+
+###
+PUT http://localhost:3003/mudar/:id/estudante
+Content-Type: application/json
+
+###
+PUT http://localhost:3003/docente/:id/turma
+Content-Type: application/json
